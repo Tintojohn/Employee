@@ -4,7 +4,8 @@ from .forms import EmployeeForm
 
 # Create your views here.
 def employee_list(request):
-    return render(request, "emp_register/employee_list.html")
+    emp_list = Employee.objects.all()
+    return render(request, "emp_register/employee_list.html", {'emp_list': emp_list})
 
 def employee_form(request):
     if request.method=='GET':
