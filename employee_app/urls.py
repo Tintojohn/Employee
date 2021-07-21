@@ -19,5 +19,7 @@ from django.conf import settings
 from .views import *
 
 urlpatterns = [
-    path('list/', admin.site.urls),
+    path('list/', employee_list, name='list'),
+    path('register', employee_form, name='form'),
+    path('', employee_delete, name='delete'),
 ]
