@@ -11,3 +11,7 @@ class EmployeeForm(forms.ModelForm):
             'Employee_Code': 'Employee Code',
             'Position': 'Position',
         }
+
+    def __init__(self, *args, **kwargs):
+        super(EmployeeForm, self).__init__(*args, *kwargs)
+        self.fields['Position'].empty_label = "Select"
