@@ -20,6 +20,5 @@ from .views import *
 
 urlpatterns = [
     path('list/', employee_list, name='list'),
-    path('register', employee_form, name='form'),
-    path('', employee_delete, name='delete'),
+    path('', employee_form, name='form'),
 ]
