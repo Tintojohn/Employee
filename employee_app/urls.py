@@ -17,8 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from .views import *
+from .views import employee_form
+from .views import insert
 
 urlpatterns = [
-    path('list/', employee_list, name='list'),
-    path('', employee_form, name='form'),
+    path('list/', employee_list, name='list'),  # get request for retrieve and display records
+    path('', insert, name='insert'),  # get and post request for insert operation
+    path('<int:id>/', employee_form, name='update'),  # get and post request for update operation
+
 ]
