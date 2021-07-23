@@ -32,7 +32,7 @@ def insert(request):
         return redirect('/list')
 
 
-
-
-def employee_delete(request):
-    return
+def employee_delete(request, id):
+    emp = Employee.objects.get(pk=id)
+    emp.delete()
+    return redirect('/list')

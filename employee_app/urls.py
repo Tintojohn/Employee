@@ -24,5 +24,6 @@ urlpatterns = [
     path('list/', employee_list, name='list'),  # get request for retrieve and display records
     path('', insert, name='insert'),  # get and post request for insert operation
     path('<int:id>/', employee_form, name='update'),  # get and post request for update operation
+    path('delete/<int:id>', employee_delete, name='delete')
 
 ]
